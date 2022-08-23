@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="http://192.168.13.107:8080/style-guide/css/fluig-style-guide.min.css">
+        <script src="http://192.168.13.107:8080/portal/resources/js/jquery/jquery.js"></script>
+        <script src="http://192.168.13.107:8080/portal/resources/js/jquery/jquery-ui.min.js"></script>
+        <script src="http://192.168.13.107:8080/portal/resources/js/mustache/mustache-min.js"></script>
+        <script src="http://192.168.13.107:8080/style-guide/js/fluig-style-guide.min.js"></script>
+        <script src="http://192.168.13.107:8080/portal/resources/js/jquery.mask.min.js"></script>
+    </head>
+    <body>
+        <div class="fluig-style-guide">
+            <form role="form">
+                <input type="hidden" id="RQ001_idUsuario" name="RQ001_idUsuario" value=""/>
+                <div class="tab-content">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Dados Usuário</div>
+                        <div class="panel-body">
+                            <div class="form-group col-md-9 col-xs-6">
+                                <label for="RQ001_nome_usuario">Nome usuário</label>
+                                <input type="text" class="form-control" id="RQ001_nome_usuario" name="RQ001_nome_usuario" placeholder="Nome do usuário">
+                            </div>
+                            <div class="form-group col-md-3 col-xs-6">
+                                <label for="RQ001_data">Data</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="RQ001_data" name="RQ001_data" placeholder="  /  /    ">
+                                    <span class="input-group-addon">
+                                        <span class="fluigicon fluigicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Dados Despesa</div>
+                        <div class="panel-body">
+                            <div class="form-group col-md-3">
+                                <label for="RQ001_natureza">Natureza</label>
+                                <select class="form-control" id="RQ001_natureza" name="RQ001_natureza">
+                                    <option>001.01</option>
+                                    <option>001.02</option>
+                                    <option>001.03</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="RQ001_departamento">Departamento</label>
+                                <input type="text" class="form-control" id="RQ001_departamento" name="RQ001_departamento">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="RQ001_valor">Valor</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="RQ001_valor" name="RQ001_valor" placeholder="0,00">
+                                    <span class="input-group-addon">%</span>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="RQ001_cpf">Cpf</label>
+                                <input type="text" class="form-control" id="RQ001_cpf" name="RQ001_cpf">
+                            </div>
+                            <div class="form-group">
+                                <label for="RQ001_observacao">Observação</label>
+                                <textarea class="form-control" id="RQ001_observacao" name="RQ001_observacao" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script>
+        $('#RQ001_valor').mask('000.000.000,00', {reverse: true});
+        $('#RQ001_cpf').mask('000.000.000-00');
+        	
+        var mySimpleCalendar = FLUIGC.calendar('#RQ001_data');
+    </script>
+</html>
