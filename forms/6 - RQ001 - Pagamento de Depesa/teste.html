@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="http://192.168.13.107:8080/style-guide/css/fluig-style-guide.min.css">
+        <link rel="stylesheet" type="text/css" href="teste.css">
         <script src="http://192.168.13.107:8080/portal/resources/js/jquery/jquery.js"></script>
         <script src="http://192.168.13.107:8080/portal/resources/js/jquery/jquery-ui.min.js"></script>
         <script src="http://192.168.13.107:8080/portal/resources/js/mustache/mustache-min.js"></script>
@@ -44,7 +45,20 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="RQ001_departamento">Departamento</label>
-                                <input type="text" class="form-control" id="RQ001_departamento" name="RQ001_departamento">
+                                <input type="zoom" class="form-control" id="RQ001_departamento" name="RQ001_departamento" data-zoom="{
+                                    'datasetId':'departamento',
+                                    'displayKey':'descricao',
+                                    'fields':[
+                                        {
+                                            'field':'id',
+                                            'label':'Id'
+                                        },
+                                        {
+                                            'field':'descricao',
+                                            'label':'Descrição'
+                                        }
+                                    ]
+                                }">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="RQ001_valor">Valor</label>
@@ -63,14 +77,36 @@
                             </div>
                         </div>
                     </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Rateio por centro de custo</div>
+                        <div class="panel-body">
+                            <div class="form-group col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table" id="RQ001_tabelaCentroDeCusto" tablename="RQ001_tabelaCentroDeCusto">
+                                        <thead>
+                                            <tr>
+                                                <th>Centro de custo</th>
+                                                <th>Observação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" class="form-control" id="RQ001_texto_centro_custo" name="RQ001_texto_centro_custo">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" id="RQ001_observacao_centro_custo" name="RQ001_observacao_centro_custo">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
     </body>
-    <script>
-        $('#RQ001_valor').mask('000.000.000,00', {reverse: true});
-        $('#RQ001_cpf').mask('000.000.000-00');
-        	
-        var mySimpleCalendar = FLUIGC.calendar('#RQ001_data');
-    </script>
+    <script src="teste.js"></script>
 </html>
