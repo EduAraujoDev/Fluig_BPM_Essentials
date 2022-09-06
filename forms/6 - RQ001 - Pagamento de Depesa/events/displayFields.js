@@ -7,5 +7,6 @@ function displayFields(form,customHTML){
     var datasetUser = DatasetFactory.getDataset("colleague", null, filtroUser, null);
 
 
+    form.setValue("RQ001_idUsuario", idUsuario);
     form.setValue("RQ001_nome_usuario", datasetUser.getValue(0, "colleagueName"));
 }

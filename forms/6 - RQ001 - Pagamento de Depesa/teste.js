@@ -39,3 +39,7 @@ $('#RQ001_cep').blur(function() {
         }
     })
 });
+
+function anexoCustom() {
+    JSInterface.showCamera('rg');
+}
